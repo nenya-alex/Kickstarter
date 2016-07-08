@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type='text/javascript' src='scripts.js'></script>
+</head>
+
+<body>
+<p id="backToCategory"></p>
+
+<table>
+  <tr>
+    <td>
+    	<h3><span id="wholeProject"></span></h3>
+		<h3>Q&A:<span id="projectQuestions"></span></h3>
+	</td>
+  </tr>
+  <tr>
+    <td>
+    	<h3 id="Button" onclick="toggleVisibility(document.getElementById('questionDiv'))">Ask a question</h3>
+    </td>
+  </tr>
+  <tr>
+        <td>      
+            <div id="questionDiv" style="visibility: hidden;">
+                <form id="questionFormId" name="questionForm" style="display: inline-block;" method="post">
+                    <input type="text" name="name"/>
+                    <input id="buttonForm" type="submit" value="Submit" />
+                </form>
+            </div>
+        </td>
+  </tr>
+  <tr>  
+        <td>
+            <h3 id="Button" align="center" onclick="toggleVisibility(document.getElementById('investmentItems'))">Invest in Project</h3>
+        </td>
+  </tr> 
+	        <tr id="investmentItems" style="visibility: hidden;">
+	                   <td>
+	                       <h3 id="InvestmentButton" align="center">Invest any amount</h3>
+	                            <form id="paymentFormId" name="paymentForm" method="post">
+                                  	<p>Enter amount of investment</p>
+                                    <input type="text" name="amount"/>
+                                    <p>Enter cardholder's name</p>
+                                    <input type="text" name="cardholderName"/>
+                                    <p>Enter card number</p>
+                                    <input type="text" name="cardNumber"/>
+                                    <input id="buttonForm" type="submit" value="Submit"/>
+                               </form>                            
+	                   </td>
+	                   <td>
+	                       <h3 id="InvestmentButton">Invest and get a REWARD</h3>
+	                       <h3><span id="rewards"></span></h3>
+	                   </td>     
+	        </tr>
+	        
+</table>
+
+</body>
+</html>
