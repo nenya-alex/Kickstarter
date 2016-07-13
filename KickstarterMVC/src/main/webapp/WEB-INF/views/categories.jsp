@@ -4,11 +4,12 @@
 <html>
 <head>
 <title>Categories</title>
+
 </head>
 <body>
 	<c:forEach var="category" items="${categories}">
 		<p>
-			<a href="<c:url value="/category/${category.id}"/>">${category.name}</a>
+			<a  id="AHrefIndex" href="<c:url value="/category/${category.id}"/>">${category.name}</a>
 		</p>
 	</c:forEach>
 

@@ -8,10 +8,12 @@
 <title>Project</title>
 </head>
 <body>
-
-	<p>
-		<a href="<c:url value="/category/${category.id}"/>" > <spring:message code="category.back" /> </a>
-	</p>
+	<table>
+	<tr>
+	<td><a id="back" href="<c:url value="/category/${category.id}"/>" > <spring:message code="category.back" /> </a></td>
+	<td><a id="home" href="<c:url value="/"/>"> <spring:message code="category.home" /> </a></td>
+	</tr>
+	</table>
 	<p><b><spring:message code="project.name" />:</b> ${project.name}</p>	
 	<p><b><spring:message code="project.description" />:</b> ${project.description}</p>
 	<p><b><spring:message code="project.neededAmount" />:</b> ${project.neededAmount}</p>
@@ -24,10 +26,10 @@
 		<p>${varStatus.count}<spring:message code="project.q" />. ${question.name}</p>
 	</c:forEach>
     <p>    
-            <a href="<c:url value="/question/${project.id}"/>" ><spring:message code="project.ask" /></a>
+            <a id="askQuestion" href="<c:url value="/question/${project.id}"/>" ><spring:message code="project.ask" /></a>
     </p>
 	<p>	   
-			<a href="<c:url value="/payment/${project.id}"/>" ><spring:message code="project.invest" /></a>
+			<a id="investProject" href="<c:url value="/payment/${project.id}"/>" ><spring:message code="project.invest" /></a>
 	</p>
 	
 </body>

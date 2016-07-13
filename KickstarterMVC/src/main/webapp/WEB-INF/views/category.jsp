@@ -9,14 +9,14 @@
 </head>
 <body>
 	<p>
-		<a href="<c:url value="/"/>"> <spring:message code="category.back" /> </a>
+		<a id="back" href="<c:url value="/"/>"> <spring:message code="category.back" /> </a> 
 	</p>
 
 	<h3><spring:message code="category.choose" /></h3>
 	<c:forEach var="project" items="${projects}">
 
 		<p>
-			<a
+			<a id="project"
 				href="<c:url value="/project/${project.id}"/>" >${project.name}</a>
 		</p>
 		<p>

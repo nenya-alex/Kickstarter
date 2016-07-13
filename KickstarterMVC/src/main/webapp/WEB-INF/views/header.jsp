@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<span> <a href="?lang=en">en</a> | <a href="?lang=ru">ru</a>
+	<span> 
+	<a id="lang" href="?lang=en">en</a>  <a id="lang" id="lang" href="?lang=ru">ru</a>
     </span>
 </body>
 </html>

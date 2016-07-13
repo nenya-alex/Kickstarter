@@ -8,10 +8,13 @@
 <title>Reward</title>
 </head>
 <body>
-
-    <p>
-        <a href="<c:url value="/project/${project.id}"/>" > <spring:message code="category.back" /> </a>
-    </p>
+<table>
+	<tr>
+	<td><a id="back" href="<c:url value="/project/${project.id}"/>" > <spring:message code="category.back" /> </a></td>
+	<td><a id="home" href="<c:url value="/"/>"> <spring:message code="category.home" /> </a></td>
+	</tr>
+	</table>
+    
     <form:form action="addReward" method="post" modelAttribute="rewardForm">
     
                 <form:input type="hidden" path="amount" value="${reward.amount}" />
@@ -26,7 +29,7 @@
                   
                 <form:input type="hidden" path="project.id" value="${project.id}" /> 
                 
-          <p><input type="submit" value="Submit" /></p>
+          <p><input id="buttonForm" type="submit" value="Submit" /></p>
     </form:form>
 </body>
 </html>

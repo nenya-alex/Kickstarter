@@ -8,9 +8,13 @@
 <title>Investment</title>
 </head>
 <body>
-    <p>
-        <a href="<c:url value="/project/${project.id}"/>" > <spring:message code="category.back" /> </a>
-    </p>
+<table>
+	<tr>
+	<td>  <a id="back" href="<c:url value="/project/${project.id}"/>" > <spring:message code="category.back" /> </a></td>
+	<td><a id="home" href="<c:url value="/"/>"> <spring:message code="category.home" /> </a></td>
+	</tr>
+	</table>
+   
 	<form:form action="addPayment" method="post" modelAttribute="paymentForm">
 	
                 <p><b><spring:message code="payment.enterAmount" /></b></p>
@@ -27,13 +31,13 @@
 			      
                 <form:input type="hidden" path="project.id" value="${project.id}" />
                  
-          <p><input type="submit" value="Submit" /></p>
+          <p><input id="buttonForm" type="submit" value="Submit" /></p>
     </form:form>
     
     <p><h2><spring:message code="payment.getReward" /></h2></p>
     
         <c:forEach var="reward" items="${rewards}">
-         <p> <a href="<c:url value="/reward/${reward.id}"/>" >${reward.name}</a> - ${reward.description}</p>
+         <p> <a id="reward" href="<c:url value="/reward/${reward.id}"/>" >${reward.name}</a> - ${reward.description}</p>
         </c:forEach>
           
 </body>
