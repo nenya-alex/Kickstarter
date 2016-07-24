@@ -33,6 +33,16 @@ $(document).ready(function () {
 );
 
 //category.html scripts
+$(document).ready(function () {
+	 
+    $("a[id=home]").mouseenter(function(){
+        $(this).fadeTo("fast", 1);
+        });
+    $("a[id=home]").mouseleave(function(){
+        $(this).fadeTo("fast", 0.5);
+        });
+});
+
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
@@ -78,7 +88,14 @@ $(document).ready(function () {
 	  dataType: "json",
 	  url: "/rest/category/project/"+getUrlParameter("projectId"),
 	  success: function (data) {
-	   $("#backToCategory").append("<a href=\"/category.html?categoryId="+data.id+"\">Back</a>");
+	   $("#backToCategory").append("<a id=\"home\" style = \"text-decoration: none; color: blue\" href=\"/category.html?categoryId="+data.id+"\">Back</a>");
+	   
+	   $("a[id=home]").mouseenter(function(){
+	          $(this).fadeTo("fast", 1);
+	          });
+	   $("a[id=home]").mouseleave(function(){
+	          $(this).fadeTo("fast", 0.5);
+	          });
 	  }
 	 });
 });
@@ -171,7 +188,14 @@ $(document).ready(function () {
 	  dataType: "json",
 	  url: "/rest/rewards/project/"+getUrlParameter("rewardId"),
 	  success: function (data) {
-	   $("#backToProject").append("<a href=\"/project.html?projectId="+data.id+"\">Back</a>");
+	   $("#backToProject").append("<a id=\"home\" style = \"text-decoration: none; color: blue\" href=\"/project.html?projectId="+data.id+"\">Back</a>");
+	   
+	   $("a[id=home]").mouseenter(function(){
+	        $(this).fadeTo("fast", 1);
+	        });
+	    $("a[id=home]").mouseleave(function(){
+	        $(this).fadeTo("fast", 0.5);
+	        });
 	  }
 	 });
 });
