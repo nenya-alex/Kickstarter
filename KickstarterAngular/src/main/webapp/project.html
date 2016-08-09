@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="ProjectApp">
+<head>
+<title>Project</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type='text/javascript' src='scripts.js'></script>
+</head>
+
+<body>
+    <table ng-controller="BackToCategoryController">
+        <tr>
+        <td>
+    <a class="firstClass" 
+	ng-class="{secondClass: hover}" 
+    ng-mouseenter="hover = true"
+    ng-mouseleave="hover = false"
+    ng-href="/category.html?categoryId={{data.id}}"><b>Back</b></a></td>
+    
+    <td><a ng-href = "/"><b>Home</b></a></td>
+        </tr>
+    </table>
+
+<table>
+  <tr>
+    <td>
+	    	<div ng-controller="ProjectController">
+	    		<p> <b>Project name:</b> {{data.name}}</p>
+	        	<p> <b>Project description:</b> {{data.description}}</p>
+	        	<p> <b>Needed amount:</b> {{data.neededAmount}}</p>
+	        	<p> <b>Available amount:</b> {{data.availableAmount}}</p>
+	        	<p> <b>Remaining days:</b> {{data.remainingDays}}</p>
+	        	<p> <b>History:</b> {{data.history}}</p>
+	        	<p> <b>Video:</b> {{data.video}}</p>
+	    	</div>
+		<div ng-controller="QuestionsController">
+		<h3>Q&A:</h3>
+		<div ng-repeat="question in questions">
+		<b>Q{{$index+1}}:</b> {{question.name}}
+		</div>
+		</div>
+	</td>
+  </tr>
+  <tr>
+    <td>
+    	<h3 class="firstClass" 
+	ng-class="{secondClass: hover}" 
+    ng-mouseenter="hover = true"
+    ng-mouseleave="hover = false">Ask a question</h3>
+    </td>
+  </tr>
+  <tr>
+        <td>      
+            <div id="questionDiv">
+                <form id="questionFormId" name="questionForm" style="display: inline-block;" method="post">
+                    <input type="text" name="name"/>
+                    <input id="buttonForm" type="submit" value="Submit" />
+                </form>
+            </div>
+        </td>
+  </tr>
+  <tr>  
+        <td>
+            <h3 class="firstClass" 
+	ng-class="{secondClass: hover}" 
+    ng-mouseenter="hover = true"
+    ng-mouseleave="hover = false">Invest in Project</h3>
+        </td>
+  </tr> 
+	        <tr id="investmentItems" style="visibility: hidden;">
+	                   <td>
+	                       <h3 id="InvestmentButton" align="center">Invest any amount</h3>
+	                            <form id="paymentFormId" name="paymentForm" method="post">
+                                  	<p>Enter amount of investment</p>
+                                    <input type="text" name="amount"/>
+                                    <p>Enter cardholder's name</p>
+                                    <input type="text" name="cardholderName"/>
+                                    <p>Enter card number</p>
+                                    <input type="text" name="cardNumber"/>
+                                    <input id="buttonForm" type="submit" value="Submit"/>
+                               </form>                            
+	                   </td>
+	                   <td>
+	                       <h3 id="InvestmentButton">Invest and get a REWARD</h3>
+	                       <h3><span id="rewards"></span></h3>
+	                   </td>     
+	        </tr>
+	        
+</table>
+
+</body>
+</html>

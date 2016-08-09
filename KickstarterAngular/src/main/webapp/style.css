@@ -1,0 +1,79 @@
+body {
+	background-color: #69D2E7;
+}
+
+a {
+	text-decoration: none;
+    border-radius: 5px;
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 1; 
+}
+
+.firstClass{
+	text-decoration: none;
+    border-radius: 5px;
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.75; 
+}
+
+.secondClass{
+	text-decoration: none;
+    border-radius: 5px;
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 1; 
+}
+
+#Button { 
+    height: 26px;
+    width: 260px;
+    border-radius: 5px;
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.5; 
+   }
+   
+#InvestmentButton { 
+    height: 26px;
+    width: 320px;
+    border-radius: 5px;
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 1; 
+   }
+   
+#RewardsButton { 
+    height: 26px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: yellow;
+    text-align: center;
+    color: blue;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.5; 
+   }
+   
+#buttonForm { 
+    display: inline-block;
+    height:20px;
+	width:70px;
+	background-color:#cc0000;
+	font-family:arial;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 5px;
+	text-align:center;
+	margin-top:2px;
+   }
