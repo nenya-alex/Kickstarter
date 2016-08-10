@@ -42,17 +42,15 @@
 		</div>
 	</td>
   </tr>
+  <table ng-controller="VisibleQuestionController">
   <tr>
     <td>
-    	<h3 class="firstClass" 
-	ng-class="{secondClass: hover}" 
-    ng-mouseenter="hover = true"
-    ng-mouseleave="hover = false">Ask a question</h3>
+    <input type="button" value="Ask a question" ng-click="ShowHide()" />
     </td>
   </tr>
   <tr>
         <td>      
-            <div id="questionDiv">
+            <div ng-show = "IsVisible">
                 <form id="questionFormId" name="questionForm" style="display: inline-block;" method="post">
                     <input type="text" name="name"/>
                     <input id="buttonForm" type="submit" value="Submit" />
@@ -60,15 +58,14 @@
             </div>
         </td>
   </tr>
+  </table>
+  <table ng-controller="RewardController">
   <tr>  
         <td>
-            <h3 class="firstClass" 
-	ng-class="{secondClass: hover}" 
-    ng-mouseenter="hover = true"
-    ng-mouseleave="hover = false">Invest in Project</h3>
+            <input type="button" value="Invest in Project" ng-click="ShowHide()" />
         </td>
   </tr> 
-	        <tr id="investmentItems" style="visibility: hidden;">
+	        <tr id="investmentItems" ng-show = "IsVisible">
 	                   <td>
 	                       <h3 id="InvestmentButton" align="center">Invest any amount</h3>
 	                            <form id="paymentFormId" name="paymentForm" method="post">
@@ -83,10 +80,19 @@
 	                   </td>
 	                   <td>
 	                       <h3 id="InvestmentButton">Invest and get a REWARD</h3>
-	                       <h3><span id="rewards"></span></h3>
+	                    <h3>
+	                    		<div ng-repeat="reward in rewards">
+								<a ng-href="/reward.html?rewardId={{reward.id}}">
+								<div id="RewardsButton" class="firstClass" 
+									ng-class="{secondClass: hover}" 
+								    ng-mouseenter="hover = true"
+								    ng-mouseleave="hover = false" ><p>{{reward.name}}</p></div>
+								</a>{{reward.description}};
+								</div>
+						</h3>
 	                   </td>     
 	        </tr>
-	        
+	  </table>      
 </table>
 
 </body>

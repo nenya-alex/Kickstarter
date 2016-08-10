@@ -18,12 +18,7 @@ var IndexApp = angular.module('IndexApp', []);
  		                $scope.categories=data;
  		              
  		            });
- 		    },
- 		    
- 		    function getCategoryURL(categoryId){
- 		    		return "<a href='/category.html?categoryId="+categoryId+"'>";
-            }
- 	
+ 		    }
  		)
 
 
@@ -58,10 +53,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
 //project.html scripts
 
 var ProjectApp = angular.module('ProjectApp', []);
+var projectId = getUrlParameter("projectId");
 
 	ProjectApp.controller('BackToCategoryController',
 		    function BackToCategoryController($scope, $http){
-		            $http.get("/rest/category/project/"+getUrlParameter("projectId")).
+		            $http.get("/rest/category/project/"+projectId).
 		             success(function(data) {
 		                $scope.data=data;
 		            });
@@ -70,7 +66,7 @@ var ProjectApp = angular.module('ProjectApp', []);
 		
 		ProjectApp.controller('ProjectController',
 		    function ProjectController($scope, $http){
-		            $http.get("/rest/project/"+getUrlParameter("projectId")).
+		            $http.get("/rest/project/"+projectId).
 		             success(function(data) {
 		                $scope.data=data;
 		            });
@@ -79,11 +75,34 @@ var ProjectApp = angular.module('ProjectApp', []);
 		
 		ProjectApp.controller('QuestionsController',
 		    function QuestionsController($scope, $http){
-		            $http.get("/rest/question/"+getUrlParameter("projectId")).
+		            $http.get("/rest/question/"+projectId).
 		             success(function(data) {
 		                $scope.questions=data;
 		            });
 		    }
+		)
+		
+		ProjectApp.controller('VisibleQuestionController', 
+			function ($scope) {
+            $scope.IsVisible = false;
+            $scope.ShowHide = function () {
+                $scope.IsVisible = $scope.IsVisible ? false : true;
+            };
+            }
+		)
+		
+		ProjectApp.controller('RewardController', 
+			function RewardController($scope, $http) {
+            $scope.IsVisible = false;
+            $scope.ShowHide = function () {
+                $scope.IsVisible = $scope.IsVisible ? false : true;
+            };
+            
+            $http.get("/rest/rewards/"+projectId).
+            success(function(data) {
+               $scope.rewards=data;
+           });
+            }
 		)
 
 
@@ -95,7 +114,15 @@ $(document).ready( function() {
     $("#paymentFormId").attr("action", "rest/payment/add/"+getUrlParameter("projectId"));
 });
 
-
+ProjectApp.controller('RewardsController',
+	    function RewardsController($scope, $http){
+	            $http.get("/rest/rewards/"+projectId).
+	             success(function(data) {
+	                $scope.rewards=data;
+	            });
+	    }
+	)
+	
 $(document).ready(function () {
 	 $.ajax({
 	  type: "GET",
