@@ -27,9 +27,9 @@
 		<form name="paymentForm" method="post" action="{{'rest/payment/add/reward/'+rewardId}}">
                     <input id="amountRewardId" type="hidden" name="amount" value="{{reward.amount}}"/>
                     <p>Enter cardholder's name</p>
-                    <input type="text" name="cardholderName"/>
+                    <input type="text" required placeholder="Cardholder's name" name="cardholderName"/>
                     <p>Enter card number</p>
-                    <input type="text" name="cardNumber"/>
+                    <input type="text" required placeholder="Card number" name="cardNumber"/>
                     <input id="buttonForm" type="submit" value="Submit"/>
        </form>
     </div>
