@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="IndexApp">
+<head>
+ <title>Kickstarter</title>
+ <meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+ 	<script type='text/javascript' src='scripts.js'></script>
+ 	
+ <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+ 
+<body>
+	<div id="indexPageDivId" ng-controller="QuoteController">
+		<h3>{{title}}</h3>
+	</div>
+
+<hr/>
+<h3 ng-controller="CategoriesController">
+	<div ng-repeat="category in categories">
+	<a class="firstClass" 
+	ng-class="{secondClass: hover}" 
+    ng-mouseenter="hover = true"
+    ng-mouseleave="hover = false"
+	ng-href="/category.html?categoryId={{category.id}}">
+		{{category.title}}
+	</a>
+	</div>
+
+	<div ng-repeat="category in categories">
+
+		<button ng-click="">
+			{{category.title}}
+		</button>
+	</div>
+
+</h3>
+
+</body>
+</html>

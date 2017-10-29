@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="RewardApp">
+<head>
+	 <title>Reward</title>
+	 <meta charset="UTF-8">
+	 <link rel="stylesheet" type="text/css" href="style.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	 <script type='text/javascript' src='scripts.js'></script>	 
+</head>
+
+<body>
+    <table ng-controller="BackToProjectController">
+        <tr>
+        <td class="secondClass"><a ng-href="/project.html?projectId={{project.id}}">
+            <b>Back</b>
+            </a>
+        </td>
+    
+            <td class="secondClass"><a ng-href = "/"><b>Home</b></a></td>
+        </tr>
+    </table>
+
+<h3>You've choose <b ng-controller="RewardController">"{{reward.title}}"</b> Reward in <b ng-controller="BackToProjectController">"{{project.title}}"</b> Project!!!</h3>
+
+<h3>Invest in Project!!!</h3>
+    <div ng-controller="RewardController">
+		<form name="paymentForm" method="post" action="{{'rest/payment/add/reward/'+rewardId}}">
+                    <input id="amountRewardId" type="hidden" name="amount" value="{{reward.amount}}"/>
+                    <p>Enter cardholder's name</p>
+                    <input type="text" required placeholder="Cardholder's name" name="cardholderName"/>
+                    <p>Enter card number</p>
+                    <input type="text" required placeholder="Card number" name="cardNumber"/>
+                    <input id="buttonForm" type="submit" value="Submit"/>
+       </form>
+    </div>
+</body>
+</html>

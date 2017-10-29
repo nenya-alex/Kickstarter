@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:db/changelog/20170916115700_added_entity_User_Authority.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916120100_added_entity_Category.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916120300_added_entity_Project.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916120500_added_entity_Quote.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916120700_added_entity_Reward.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916120900_added_entity_Payment.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916121100_added_entity_Question.xml" relativeToChangelogFile="false"/>
+
+    <include file="classpath:db/changelog/20170916121500_added_entity_Answer.xml" relativeToChangelogFile="false"/>
+
+</databaseChangeLog>

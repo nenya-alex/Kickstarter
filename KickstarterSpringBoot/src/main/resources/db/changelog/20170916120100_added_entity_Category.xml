@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <changeSet id="20170916120100" author="a.nenya">
+        <createTable tableName="category">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="title" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="created_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="updated_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_at" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="updated_at" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="created_by_id"
+                                 baseTableName="category"
+                                 constraintName="fk_created_by_id_user"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user"/>
+
+        <addForeignKeyConstraint baseColumnNames="updated_by_id"
+                                 baseTableName="category"
+                                 constraintName="fk_updated_by_id_user"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user"/>
+
+        <loadData encoding="UTF-8"
+                  file="db/data/category.csv"
+                  separator=";"
+                  tableName="category">
+        <column name="created_at" type="timestamp"/>
+        <column name="updated_at" type="timestamp"/>
+        </loadData>
+
+    </changeSet>
+
+</databaseChangeLog>

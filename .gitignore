@@ -7,5 +7,6 @@
 .project
 bin/
 target/
+.idea
 
 >>>>>>> ece0cf05ec907720487264ba1b87efcb2bfdcd4a

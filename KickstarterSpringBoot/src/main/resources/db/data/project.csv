@@ -1,0 +1,7 @@
+id;category_id;created_by_id;title;description;needed_amount;remaining_days;history;video
+1;1;4;A new funny song;We want to write a new funny song!;2000;7;History of funny song;Video about funny song
+2;1;4;A lonely song;We want to write a new sad song!;400;3;History of lonely song;video about lonely song
+3;2;4;Terminator 88;All money we will gather is for new blockbuster!;200000;365;History of Terminator;video about Terminator
+4;2;4;Dirty Garry;It will be a western about wild west!;10000;150;History of wild west;video about Garry
+5;3;4;Exhibition of photos;Exhibition of photos of Kiev!;7000;15;History of photos;video about exhibition
+6;3;4;Exhibition of plates;Exhibition of old plates!;100000;120;History of plates;video about exhibition

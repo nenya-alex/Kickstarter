@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <changeSet id="20170916120300" author="a.nenya">
+        <createTable tableName="project">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="category_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_by_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_at" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="title" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="description" type="varchar()">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="needed_amount" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="remaining_days" type="int">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="history" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="video" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="created_by_id"
+                                 baseTableName="project"
+                                 constraintName="fk_created_by_id_user"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user"/>
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="project"
+                                 constraintName="fk_category_id_category"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+
+        <loadData encoding="UTF-8"
+                  file="db/data/project.csv"
+                  separator=";"
+                  tableName="project">
+            <column name="created_at" type="timestamp"/>
+        </loadData>
+
+    </changeSet>
+
+</databaseChangeLog>

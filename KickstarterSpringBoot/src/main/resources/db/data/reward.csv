@@ -1,0 +1,23 @@
+id;project_id;title;amount;description;is_used
+1;1;100$;100;Invest one hundred dollars and get bottle of water;false
+2;1;100$;100;Invest one hundred dollars and get five bottles of water;false
+3;1;200$;200;Invest two hundreds dollars and get two tickets to the movie;false
+4;1;200$;200;Invest two hundreds dollars and get tickets to the movie for all family;false
+5;1;500$;500;Invest five hundreds dollars and get a lunch for two persons in the restaurant;false
+6;2;100$;100;Invest one hundred dollars and get bottle of water!!!;false
+7;2;100$;100;Invest one hundred dollars and get five bottles of water!!!;false
+8;3;200$;200;Invest two hundreds dollars and get two tickets to the movie!!!;false
+9;3;200$;200;Invest two hundreds dollars and get tickets to the movie for all family!!!;false
+10;3;500$;500;Invest five hundreds dollars and get a lunch for two persons in the restaurant!!!;false
+11;4;100$;100;Invest one hundred dollars and get bottle of water!!!;false
+12;4;100$;100;Invest one hundred dollars and get five bottles of water!!!;false
+13;4;200$;200;Invest two hundreds dollars and get two tickets to the movie!!!;false
+14;4;200$;200;Invest two hundreds dollars and get tickets to the movie for all family!!!;false
+15;4;500$;500;Invest five hundreds dollars and get a lunch for two persons in the restaurant!!!;false
+16;5;100$;100;Invest one hundred dollars and get bottle of water!!!;false
+17;5;100$;100;Invest one hundred dollars and get five bottles of water!!!;false
+18;5;200$;200;Invest two hundreds dollars and get two tickets to the movie!!!;false
+19;5;200$;200;Invest two hundreds dollars and get tickets to the movie for all family!!!;false
+20;5;500$;500;Invest five hundreds dollars and get a lunch for two persons in the restaurant!!!;false
+21;6;100$;100;Invest one hundred dollars and get bottle of water!!!;false
+22;6;100$;100;Invest one hundred dollars and get five bottles of water!!!;false
